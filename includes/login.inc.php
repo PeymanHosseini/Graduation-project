@@ -3,17 +3,17 @@ session_start();
 
 if(isset($_POST["submit"]))
 {
-
-    //connect to database
-        include 'db.inc.php';
-        $email = mysqli_real_escape_string($con, $_POST['email']);
-        $pwd = mysqli_real_escape_string($con, $_POST['password']);
+//connect to database
+include 'db.inc.php';
+$email = mysqli_real_escape_string($con, $_POST['email']);
+$pwd = mysqli_real_escape_string($con, $_POST['password']);
         
         //error handeling
         if (empty($email) || empty($pwd))
         {
-            header("Location: ../login.php?login=empty");
+            header("Location: ../login.php?login=emptyyyy");
             exit();
+            
         }
         //Password must contain 6 characters of letters, numbers and at least one special character
         elseif(!preg_match('/^(?=.*\d)(?=.*[A-Za-z])(?=.*[!@#$%])[0-9A-Za-z!@#$%]{6,15}$/', $pwd))
@@ -28,8 +28,7 @@ if(isset($_POST["submit"]))
             header("Location: ../login.php?login=invalidEmail");
             exit();
         }
-        
-        
+
            else{ 
             $sql = "SELECT * FROM student_table WHERE std_email = '$email' ";
             $result = mysqli_query ($con , $sql);
@@ -46,6 +45,7 @@ if(isset($_POST["submit"]))
                      header("Location: ../login.php?login=pwdNotM");
                      exit();
                     } elseif($hashchek == true){
+
                     // log in user here
                     $_SESSION['student_id'] = $row['std_id'];
                     $_SESSION['student_name'] = $row['std_name'];
@@ -58,10 +58,5 @@ if(isset($_POST["submit"]))
             }
         }}
 }
-
-        
-
-
-
 
 ?>
