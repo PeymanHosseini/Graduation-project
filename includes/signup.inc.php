@@ -47,5 +47,12 @@ $course =$_POST['coursecode'];
             $sql = "INSERT INTO `student_table`(`std_email`, `std_name`, `std_fname`, `std_tell`, `password`, `std_course`) VALUES ('$email','$name','$fname','$tell','$hashedpass','$course')";
             mysqli_query($con,$sql);
             header("Location: ../login.php");
+            // send email
+            $to = "peyman.h88@hotmail.com";
+            $subject = "Graduation Proj";
+            $headers = "From: noreply@example.com\r\n";
+            $message = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.";        
+            mail($to, $subject, $message, $headers);
+
             }
         }}
