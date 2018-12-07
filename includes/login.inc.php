@@ -14,13 +14,13 @@ if(isset($_POST["submit"]))
         header("Location: ../login.php?login=emptyyyy");
         exit();  
     }
-
+   
     //Password must contain 6 characters of letters, numbers and at least one special character
     //elseif(!preg_match('/^(?=.*\d)(?=.*[A-Za-z])(?=.*[!@#$%])[0-9A-Za-z!@#$%]{6,15}$/', $pwd))
     //{
-     //   header("Location: ../login.php?login=character");
-      //  exit();
-   // }
+    //    header("Location: ../login.php?login=character");
+    //    exit();
+    //}
 
     //check email format 
     elseif (!filter_var($email, FILTER_VALIDATE_EMAIL))
@@ -30,8 +30,8 @@ if(isset($_POST["submit"]))
     }
 
     else
-    {
-        //admin
+    
+        //staff
         $query1 = mysqli_query($con, "SELECT * FROM staff_table WHERE staff_email='$email' AND password='$pwd'");
         if(mysqli_num_rows($query1) == 0)
         {
@@ -42,65 +42,30 @@ if(isset($_POST["submit"]))
         {
             $row1 = mysqli_fetch_assoc($query1);
             $_SESSION['email']=$row1['staff_email'];
-            $_SESSION['admin'] = $row1['level'];
+            $_SESSION['user'] = $row1['level'];
             
-            if($_SESSION['admin'] == $row1['level'])
+            if($_SESSION['user'] == 'admin')
             {
                 header("Location: ../admin.php");
             }
-            else
-            {
-                $error = "Failed Login";
-            }
-        }
-
-        //advisor
-        $query1 = mysqli_query($con, "SELECT * FROM staff_table WHERE staff_email='$email' AND password='$pwd'");
-        if(mysqli_num_rows($query1) == 0)
-        {
-            header("Location: ../login.php?login=advisorUserNotValid");
-            
-        }
-        else
-        {
-            $row1 = mysqli_fetch_assoc($query1);
-            $_SESSION['email']=$row1['staff_email'];
-            $_SESSION['advisor'] = $row1['level'];
-            
-            if($_SESSION['advisor'] == $row1['level'])
+            elseif($_SESSION['user'] == 'advisor')
             {
                 header("Location: ../advisor.php");
             }
-            else
-            {
-                $error = "Failed Login";
-            }
-        }
-        //committe
-        $query1 = mysqli_query($con, "SELECT * FROM staff_table WHERE staff_email='$email' AND password='$pwd'");
-        if(mysqli_num_rows($query1) == 0)
-        {
-            header("Location: ../login.php?login=committeeUserNotValid");
-            
-        }
-        else
-        {
-            $row1 = mysqli_fetch_assoc($query1);
-            $_SESSION['email']=$row1['staff_email'];
-            $_SESSION['committee'] = $row1['level'];
-            
-            if($_SESSION['committee'] == $row1['level'])
+            elseif($_SESSION['user'] == 'committee')
             {
                 header("Location: ../commitee.php");
             }
             else
             {
-                $error = "Failed Login";
+                header("Location: ../login.php?login=ERROOrUserNotValid");
             }
         }
+/*
+      
 
          //student
-         $query1 = mysqli_query($con, "SELECT * FROM staff_table WHERE staff_email='$email' AND password='$pwd'");
+         $query1 = mysqli_query($con, "SELECT * FROM student_table WHERE std_email='$email' AND password='$pwd'");
          if(mysqli_num_rows($query1) == 0)
          {
              header("Location: ../login.php?login=committeeUserNotValid");
@@ -121,7 +86,7 @@ if(isset($_POST["submit"]))
                  $error = "Failed Login";
              }
          }
-
-    }
+*/
+    
 }
 

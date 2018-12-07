@@ -5,6 +5,7 @@ if(isset($_POST["signup"]))
 
     //connect to database
     include_once 'db.inc.php'; 
+    
     // collect the data from form
     $email = mysqli_real_escape_string($con, $_POST['email']);
     $name = mysqli_real_escape_string($con, $_POST['name']);
