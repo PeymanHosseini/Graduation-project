@@ -1,7 +1,19 @@
 <?php
 session_start();
 
+//checking if user already login
+if(!isset($_SESSION['email'])){
+    header('Location: login.php?login=youAreNotlogined');
+}
+
+//checking user's level
+if($_SESSION['level']!="advisor"){
+    header('Location: login.php?login=youAreNotAdvisor');
+	
+}
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,7 +35,7 @@ session_start();
         <li><a href="#posts"> Evaluation Form</a></li>
         <li><a href="#media"> Forms</a></li>
         <li><a href="#comments"> Add Announcment</a></li>
-        <li><a href="#widgets"> Logout</a></li>
+        <li><a href="logout.php"> Logout</a></li>
      </ul>
   </div>
   <div class="main">

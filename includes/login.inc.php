@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 
 if(isset($_POST["submit"]))
 {
@@ -31,6 +31,7 @@ if(isset($_POST["submit"]))
 
     else
     {
+        session_start();
         //staff
         $query1 = mysqli_query($con, "SELECT * FROM staff_table WHERE staff_email='$email' AND password='$pwd'");
         if(mysqli_num_rows($query1) == 0)
@@ -47,12 +48,11 @@ if(isset($_POST["submit"]))
                             } 
                             else
                             {
+                                
                                 $_SESSION['email']=$row1['std_email'];
-                                $_SESSION['user'] = $row1['level'];
-                              if($_SESSION['user'] == 'student')
-                                {
-                                    header("Location: ../student.php");
-                                }                            
+                                $_SESSION['level'] = $row1['level'];
+                                header("Location: ../student.php");
+                                                            
                             }
                         }
                         else
@@ -65,19 +65,23 @@ if(isset($_POST["submit"]))
         else
         {
             $row1 = mysqli_fetch_assoc($query1);
-            $_SESSION['email']=$row1['staff_email'];
-            $_SESSION['user'] = $row1['level'];
-            
-            if($_SESSION['user'] == 'admin')
+
+            if($row1['level'] == 'admin')
             {
+                $_SESSION['email']=$row1['staff_email'];
+                $_SESSION['level'] =$row1['level'] ;
                 header("Location: ../admin.php");
             }
-            elseif($_SESSION['user'] == 'advisor')
+            elseif($row1['level'] == 'advisor')
             {
+                $_SESSION['email']=$row1['staff_email'];
+                $_SESSION['level'] = $row1['level'];
                 header("Location: ../advisor.php");
             }
-            elseif($_SESSION['user'] == 'committee')
+            elseif($row1['level'] == 'committee')
             {
+                $_SESSION['email']=$row1['staff_email'];
+                $_SESSION['level'] = $row1['level'];
                 header("Location: ../commitee.php");
             }
             else

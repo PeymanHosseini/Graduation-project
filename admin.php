@@ -1,6 +1,17 @@
-//<?php
-//include('checkadmin.php');
-//?>
+<?php
+session_start();
+
+//checking if user already login
+if(!isset($_SESSION['email'])){
+    header('Location: login.php?login=youAreNotlogined');
+}
+
+//checking user's level
+if($_SESSION['level']!="admin"){
+    header('Location: login.php?login=youAreNotAdmin');
+	
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,7 +34,7 @@
         <li><a href="#media"> Add Task</a></li>
         <li><a href="#links"> Upload task</a></li>
         <li><a href="#comments"> Add Announcment</a></li>
-        <li><a href="#widgets"> Logout</a></li>
+        <li><a href="logout.php"> Logout</a></li>
      </ul>
   </div>
   <div class="main">
@@ -51,6 +62,7 @@
          </div>
        </div>
        <div id="posts">
+       <?php echo $_SESSION['level']; ?>
          <h4 class="header">posts</h4>
        </div>
        <div id="media">

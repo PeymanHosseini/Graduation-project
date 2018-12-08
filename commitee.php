@@ -1,5 +1,18 @@
 <?php
+
 session_start();
+
+//checking if user already login
+if(!isset($_SESSION['email'])){
+    header('Location: login.php?login=youAreNotlogined');
+}
+
+//checking user's level
+if($_SESSION['level']!="committee"){
+   header('Location: login.php?login=youAreNotCommittee');
+	
+}
+
 
 ?>
 <!DOCTYPE html>
@@ -24,7 +37,7 @@ session_start();
         <li><a href="#media"> Add Task</a></li>
         <li><a href="#links"> Uploaded task</a></li>
         <li><a href="#comments"> Add Announcment</a></li>
-        <li><a href="#widgets"> Logout</a></li>
+        <li><a href="logout.php"> Logout</a></li>
      </ul>
   </div>
   <div class="main">
@@ -52,6 +65,7 @@ session_start();
          </div>
        </div>
        <div id="posts">
+       <?php echo $_SESSION['email']; ?>
          <h4 class="header">posts</h4>
        </div>
        <div id="media">
