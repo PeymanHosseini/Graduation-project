@@ -31,29 +31,33 @@ if(isset($_POST["submit"]))
 
     else
     {
-
-    
-    
         //staff
         $query1 = mysqli_query($con, "SELECT * FROM staff_table WHERE staff_email='$email' AND password='$pwd'");
         if(mysqli_num_rows($query1) == 0)
         {
-                        $query1 = mysqli_query($con, "SELECT * FROM student_table WHERE std_email='$email' AND password='$pwd'");
-                        if(mysqli_num_rows($query1) == 0)
+                        $query2 = mysqli_query($con, "SELECT * FROM student_table WHERE std_email='$email'");
+                        if(mysqli_num_rows($query2) == 1)
                         {
-                            header("Location: ../login.php?login=emailNotFoundInDataBase");
-                            
+                            $row1 = mysqli_fetch_assoc($query2);
+                            $hashchek = password_verify($pwd, $row1['password']);
+                            if($hashchek == false)
+                            {
+                                header("Location: ../login.php?login=passwordIsWrong");
+                                exit();
+                            } 
+                            else
+                            {
+                                $_SESSION['email']=$row1['std_email'];
+                                $_SESSION['user'] = $row1['level'];
+                              if($_SESSION['user'] == 'student')
+                                {
+                                    header("Location: ../student.php");
+                                }                            
+                            }
                         }
                         else
                         {
-                            $row1 = mysqli_fetch_assoc($query1);
-                            $_SESSION['email']=$row1['std_email'];
-                            $_SESSION['user'] = $row1['level'];
-                            
-                            if($_SESSION['user'] == 'student')
-                            {
-                                header("Location: ../student.php");
-                            }
+                            header("Location: ../login.php?login=emailNotFoundInDataBase");
                             
                         }
             
@@ -81,32 +85,7 @@ if(isset($_POST["submit"]))
                 header("Location: ../login.php?login=ERROOrUserNotValid");
             }
         }
-/*
-      
 
-         //student
-         $query1 = mysqli_query($con, "SELECT * FROM student_table WHERE std_email='$email' AND password='$pwd'");
-         if(mysqli_num_rows($query1) == 0)
-         {
-             header("Location: ../login.php?login=committeeUserNotValid");
-             
-         }
-         else
-         {
-             $row1 = mysqli_fetch_assoc($query1);
-             $_SESSION['email']=$row1['std_email'];
-             $_SESSION['student'] = $row1['level'];
-             
-             if($_SESSION['student'] == $row1['level'])
-             {
-                 header("Location: ../student.php");
-             }
-             else
-             {
-                 $error = "Failed Login";
-             }
-         }
-*/
     }
 }
 
