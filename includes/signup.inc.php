@@ -37,9 +37,10 @@ if(isset($_POST["signup"]))
         $resultcheck = mysqli_num_rows($result);
         if($resultcheck > 0){header("Location: ../signup.php?signup=emailExist");exit();}
 
-        // insert data to data base       
+             
         else
         {
+            // insert data to data base  
             //hashing the pass
             $hashedpass = password_hash($pwd,PASSWORD_DEFAULT);
             $sql = "INSERT INTO `student_table`(`std_email`,`password`, `std_name`, `std_fname`, `std_tell`, `std_course`,`level`) VALUES ('$email','$hashedpass','$name','$fname','$tell','$course','$level')";

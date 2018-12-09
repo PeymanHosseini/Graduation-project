@@ -25,12 +25,6 @@
                         <input type="password" name="password" id="password" class="form-control" placeholder="Enter Password ...">
                     </div>
                     <div class="form-group">
-                        <label for="password">User Type: </label>
-                       <select name="usertype" >
-                           <option value="admin">Admin</option>
-                           <option value="student">Student</option>
-                           <option value="adviser">Staff</option>
-                       </select>
                     </div>
                     <div class="form-group">
                     <input type="submit" value="Login >>"  class="form-btn" id="submit" name="submit">

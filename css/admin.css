@@ -251,6 +251,7 @@ body {
   background: -ms-linear-gradient(top, rgb(245, 101, 82), rgb(234, 83, 63));
   background: linear-gradient(top, rgb(245, 101, 82), rgb(234, 83, 63));
 }
+
 .quick-press .submit:hover {
   background: -webkit-linear-gradient(top, rgb(220, 85, 70), rgb(210, 65, 53));
   background: -moz-linear-gradient(top, rgb(220, 85, 70), rgb(210, 65, 53));
