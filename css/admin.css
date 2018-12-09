@@ -118,12 +118,12 @@ body {
 }
 
 #dashboard > div {
-  border: 1px solid rgb(235, 235, 235);
+  border: 1px solid rgb(238, 206, 206);
   margin-left: 30px;
   float: left;
   border-radius: 5px;
-  min-width: 345px;
-  height: 262px;
+  min-width: 500px;
+  height: 500px;
   display: inline-block;
 }
 .monitor ul {
@@ -243,7 +243,22 @@ body {
 .quick-press .submit {
   float: right;
   width: 70px;
-  border: 1px solid rgb(238, 85, 64);
+  border: 1px solid rgb(83, 241, 51);
+  color: #fff;
+  font-size: 16px;
+  background: -webkit-linear-gradient(
+    top,
+    rgb(138, 231, 62),
+    rgb(138, 231, 62)
+  );
+  background: -moz-linear-gradient(top, rgb(138, 231, 62), rgb(138, 231, 62));
+  background: -ms-linear-gradient(top, rgb(138, 231, 62), rgb(138, 231, 62));
+  background: linear-gradient(top, rgb(138, 231, 62), rgb(138, 231, 62));
+}
+.quick-press .submit2 {
+  float: right;
+  width: 70px;
+  border: 1px solid rgb(238, 64, 64);
   color: #fff;
   font-size: 16px;
   background: -webkit-linear-gradient(top, rgb(245, 101, 82), rgb(234, 83, 63));
@@ -253,10 +268,16 @@ body {
 }
 
 .quick-press .submit:hover {
-  background: -webkit-linear-gradient(top, rgb(220, 85, 70), rgb(210, 65, 53));
-  background: -moz-linear-gradient(top, rgb(220, 85, 70), rgb(210, 65, 53));
-  background: -ms-linear-gradient(top, rgb(220, 85, 70), rgb(210, 65, 53));
-  background: linear-gradient(top, rgb(220, 85, 70), rgb(210, 65, 53));
+  background: -webkit-linear-gradient(top, rgb(10, 231, 47), rgb(10, 231, 47));
+  background: -moz-linear-gradient(top, rgb(10, 231, 47), rgb(10, 231, 47));
+  background: -ms-linear-gradient(top, rgb(10, 231, 47), rgb(10, 231, 47));
+  background: linear-gradient(top, rgb(10, 231, 47), rgb(10, 231, 47));
+}
+.quick-press .submit2:hover {
+  background: -webkit-linear-gradient(top, rgb(165, 2, 2), rgb(165, 2, 2));
+  background: -moz-linear-gradient(top, rgb(165, 2, 2), rgb(165, 2, 2));
+  background: -ms-linear-gradient(top, rgb(165, 2, 2), rgb(165, 2, 2));
+  background: linear-gradient(top, rgb(165, 2, 2), rgb(165, 2, 2));
 }
 /*logo*/
 .logo a {

@@ -20,7 +20,7 @@ if($_SESSION['level']!="admin"){
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Admin Panel</title>
     
-    <link href="css/Admin.css" type ="text/css" rel="stylesheet">
+    <link href="css/Admin.css" type ="text/css" rel="stylesheet"<?=time()?>">
 </head>
 <body>
 <div class="admin-panel clearfix">
@@ -43,7 +43,7 @@ if($_SESSION['level']!="admin"){
       <div id="dashboard">
         <h1 class="header"><span class=""></span></h1>
           <div class="quick-press">
-            <h4>Add Staff</h4>
+            <h4>Add/Delete Staff</h4>
             <div class="clearfix">
             <form action="includes/admin.add.php" method="post">
              <input type="text" name="email" placeholder="Email"/>
@@ -52,29 +52,31 @@ if($_SESSION['level']!="admin"){
              <input type="text" name="surname" placeholder="Surname"/>
              <input type="text" name="office" placeholder="Office"/>
              <input type="text" name="level" placeholder="Level"/>
+             <button type="submit" class="submit2" name="submit2">Delete</button>
              <button type="submit" class="submit" name="submit">Add</button>
              
            </form>
            </div>
-          
-         </div>
-         <div class="quick-press">
-           <h4>Delete Staff</h4>
-           <form action="includes/admin.delete.php" method="post">
-             <input type="text" name="Email" placeholder="Email"/>
-             <input type="text" name="Password" placeholder="Password"/>
-             <input type="text" name="Name" placeholder="Name"/>
-             <input type="text" name="Surname" placeholder="Surname"/>
-             <input type="text" name="Office" placeholder="Office"/>
-             <input type="text" name="Level" placeholder="Level"/>
-            
-             <button type="submit" class="submit" name="submit">Delete</button>
-           </form>
-         </div>
+          </div>
        </div>
        <div id="posts">
-       <?php echo $_SESSION['level']; ?>
-         <h4 class="header">posts</h4>
+       
+         
+         <div id="dashboard">
+        <h1 class="header"><span class=""></span></h1>
+          <div class="quick-press">
+            <h4>Evaluation Form</h4>
+            <div class="clearfix">
+            <form action="includes/admin.add.php" method="post">
+             <input type="text" name="email" placeholder="Email"/>
+
+             
+             <button type="submit" class="submit" name="submit">Submit</button>
+             
+           </form>
+           </div>
+          </div>
+       </div>
        </div>
        <div id="media">
          <h4 class="header">media</h4>
