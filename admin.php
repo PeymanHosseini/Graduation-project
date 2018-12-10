@@ -1,11 +1,9 @@
 <?php
 session_start();
-
 //checking if user already login
 if(!isset($_SESSION['email'])){
     header('Location: login.php?login=youAreNotlogined');
 }
-
 //checking user's level
 if($_SESSION['level']!="admin"){
     header('Location: login.php?login=youAreNotAdmin');
@@ -62,20 +60,18 @@ if($_SESSION['level']!="admin"){
        <div id="posts">
        
          
-         <div id="dashboard">
+         
         <h1 class="header"><span class=""></span></h1>
           <div class="quick-press">
             <h4>Evaluation Form</h4>
             <div class="clearfix">
-            <form action="includes/admin.add.php" method="post">
+            <form action="#" method="post">
              <input type="text" name="email" placeholder="Email"/>
-
-             
              <button type="submit" class="submit" name="submit">Submit</button>
              
            </form>
            </div>
-          </div>
+          
        </div>
        </div>
        <div id="media">
