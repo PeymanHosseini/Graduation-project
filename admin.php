@@ -30,7 +30,6 @@ if($_SESSION['level']!="admin"){
         <li class="current"><a href="#dashboard"> User Managment </a></li>
         <li><a href="#posts"> Evaluation Form</a></li>
         <li><a href="#media"> Add Task</a></li>
-        <li><a href="#links"> Upload task</a></li>
         <li><a href="#comments"> Add Announcment</a></li>
         <li><a href="logout.php"> Logout</a></li>
      </ul>
@@ -65,11 +64,6 @@ if($_SESSION['level']!="admin"){
           <div class="quick-press">
             <h4>Evaluation Form</h4>
             <div class="clearfix">
-            <form action="#" method="post">
-             <input type="text" name="email" placeholder="Email"/>
-             <button type="submit" class="submit" name="submit">Submit</button>
-             
-           </form>
            </div>
           
        </div>
