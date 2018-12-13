@@ -17,14 +17,13 @@ if($_SESSION['level']!="admin"){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Admin Panel</title>
-    
     <link href="css/Admin.css" type ="text/css" rel="stylesheet"<?=time()?>">
 </head>
 <body>
 <div class="admin-panel clearfix">
   <div class="slidebar">
     <div class="logo">
-      <a href="../admin.php"></a>
+      <a href="admin.php"></a>
     </div>
     <ul >
         <li ><a href="admin/admin.user.php#dashboard"> User Managment </a></li>
@@ -34,10 +33,7 @@ if($_SESSION['level']!="admin"){
         <li ><a href="logout.php"> Logout</a></li>
      </ul>
   </div>
-  
   <div class="main">
-
-
  <h4>Hello  <?php echo ($_SESSION['email']);?></h4>
        <div class="mainContent clearfix">
        <div id="posts">
@@ -46,30 +42,9 @@ if($_SESSION['level']!="admin"){
             <h4>Evaluation Form</h4>
             <div class="clearfix">
            </div>
-          
-       </div>
-       </div>
-       <div id="media">
-         <h4 class="header">media</h4>
-
-
-
-       </div>
-       <div id="pages">
-         <h4 class="header">pages</h4>
-       </div>
-       <div id="links">
-         <h4 class="header">links</h4>
-       </div>
-       <div id="comments">
-         <h4 class="header">comments</h4>
-       </div>
-       <div id="widgets">
-         <h4 class="header">widgets</h4>
-       </div>
-       
-     </div>
-     
+        </div>
+       </div>     
+     </div>    
    </div>
 </div>
 </body>

@@ -20,6 +20,7 @@ if($_SESSION['level']!="admin"){
     
     <link href="../css/Admin.css" type ="text/css" rel="stylesheet"<?=time()?>">
 </head>
+
 <body>
 <div class="admin-panel clearfix">
   <div class="slidebar">
@@ -34,9 +35,7 @@ if($_SESSION['level']!="admin"){
         <li ><a href="../logout.php"> Logout</a></li>
      </ul>
   </div>
-  
   <div class="main">
-    
     <div class="mainContent clearfix">
       <div id="dashboard">
         <h1 class="header"><span class=""></span></h1>
@@ -55,13 +54,8 @@ if($_SESSION['level']!="admin"){
            </form>
            </div>
           </div>
-       </div>
-       </div>
-      
-       
-     </div>
-     
-   </div>
-</div>
+         </div>
+       </div>  
+     </div> 
 </body>
 </html>

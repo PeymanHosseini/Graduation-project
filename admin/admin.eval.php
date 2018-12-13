@@ -28,22 +28,20 @@ if($_SESSION['level']!="admin"){
     </div>
     <ul >
         <li ><a href="admin.user.php#dashboard"> User Managment </a></li>
-        <li ><a href="admin.eval.php#post"> Evaluation Form</a></li>
+        <li ><a href="admin.eval.php#dashboard"> Evaluation Form</a></li>
         <li ><a href="admin.task.php#media"> Add Task</a></li>
         <li ><a href="admin.ans.php#comment"> Add Announcment</a></li>
         <li ><a href="../logout.php"> Logout</a></li>
      </ul>
   </div>
-  
   <div class="main">
-    
     <div class="mainContent clearfix">
       <div id="dashboard">
-        <h1 class="header"><span class=""></span></h1>
-          <div class="quick-press">
+        <h1 class="header"><span class="">helooooo</span></h1>
+        <div class="quick-press">
             <h4>Add/Delete Staff</h4>
             <div class="clearfix">
-            <form action="includes/admin.add.php" method="post">
+            <form action="../includes/admin.add.php" method="post">
              <input type="text" name="email" placeholder="Email"/>
              <input type="text" name="password" placeholder="Password"/>
              <input type="text" name="name" placeholder="Name"/>
@@ -55,12 +53,8 @@ if($_SESSION['level']!="admin"){
            </form>
            </div>
           </div>
-       </div>
-       </div>
-      
-       
-     </div>
-     
+      </div>
+     </div> 
    </div>
 </div>
 </body>
