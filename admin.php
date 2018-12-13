@@ -24,7 +24,7 @@ if($_SESSION['level']!="admin"){
 <div class="admin-panel clearfix">
   <div class="slidebar">
     <div class="logo">
-      <a href=""></a>
+      <a href="../admin.php"></a>
     </div>
     <ul >
         <li ><a href="admin/admin.user.php#dashboard"> User Managment </a></li>
@@ -36,6 +36,9 @@ if($_SESSION['level']!="admin"){
   </div>
   
   <div class="main">
+
+
+ <h4>Hello  <?php echo ($_SESSION['email']);?></h4>
        <div class="mainContent clearfix">
        <div id="posts">
         <h1 class="header"><span class=""></span></h1>
