@@ -5,14 +5,29 @@ $password = "";
 $dbname = "stdsystem";
 $con=mysqli_connect($servername,$username,$password,$dbname);
 
-if(!$con)
-{
-    die('Connection Error'.mysqli_error());
-}
- 
 include("header.php"); 
+if(isset($_POST['submit']))
+{
+  $user_id=$_SESSION['email'];
+  $email = $_POST['email'];
+  $course_code=$_POST['coursecode'];
+  // Default to null
+  $date=null;
+  // Only proceed if strtotime() succeeds
+  if($pdate=strtotime($_POST['date'])) {
+  // Since we have a valid time, turn to date string
+  $date=date("Y-m-d", $pdate);
+}
+    header("location: admin.eval.php#dashboard.php");
+	$abc1=mysqli_query($con,"select * from question");
+	while(list($question_id,$question_text)=mysqli_fetch_array($abc1))
+	{
+    
+		$evl_val=$_POST['radio'.$question_id];
+		mysqli_query($con,"INSERT INTO `evaluation_table`(`std_email`,`staff_email`, `question_id`, `answer`, `course_id`, `date`) VALUES ('$email','$user_id','$question_id','$evl_val','$course_code' ,'$date')");
 
-$user_id=$_SESSION['email'];
+  }
+}
 ?>
  
   <div class="main">
@@ -26,9 +41,11 @@ $user_id=$_SESSION['email'];
  <input type="text" name="email" id="username"  placeholder="Enter student Email">  <br/>
  <label for="password">Course Code: </label>
                        <select name="coursecode" >
-                           <option value="403">Itec 403</option>
-                           <option value="404">Itec 404</option>
-                       </select>      
+                           <option value="1">Itec 403</option>
+                           <option value="2">Itec 404</option>
+                       </select> &nbsp;&nbsp;  
+                       <label for="date">   Date:     </label>
+                      <input type="date"  name="date" id="date"/>  
                        <h4>Evaluation Form</h4>  
 <?php 
 
