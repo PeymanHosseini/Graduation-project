@@ -1,5 +1,18 @@
 <?php
-include 'header.php';
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "stdsystem";
+$con=mysqli_connect($servername,$username,$password,$dbname);
+
+if(!$con)
+{
+    die('Connection Error'.mysqli_error());
+}
+ 
+include("header.php"); 
+
+$user_id=$_SESSION['email'];
 ?>
  
   <div class="main">
@@ -7,71 +20,39 @@ include 'header.php';
       <div id="dashboard">
         <h1 class="header"><span class=""></span></h1>
         <div class="quick-press">
-            <h4>Add/Delete Staff</h4>
+            <h4>Evaluation Form</h4>
             <div class="clearfix">
-            <form action="../includes/admin.add.php" method="post">
-            <table style="width:100%">
-              <tr>
-                <th>ID</th>
-                <th>Question</th>
-                <th >Rate</th>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>DB Evaluation by Committee Members</td>
-                <td><input type="radio" name="1" value="male"> Good
-             <input type="radio" name="1" value="female"> Average
-             <input type="radio" name="1" value="female"> Bad</td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>Peer Evaluation</td>
-                <td><input type="radio" name="2" value="male"> Good
-             <input type="radio" name="2" value="female"> Average
-             <input type="radio" name="2" value="female"> Bad</td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>Project Demonstration</td>
-                <td><input type="radio" name="3" value="male"> Good
-             <input type="radio" name="3" value="female"> Average
-             <input type="radio" name="3" value="female"> Bad</td>
-              </tr>
-              <tr>
-                <td>4</td>
-                <td>Student Evaluation By Jury Members</td>
-                <td><input type="radio" name="4" value="male"> Good
-             <input type="radio" name="4" value="female"> Average
-             <input type="radio" name="4" value="female"> Bad</td>
-              </tr>
-              <tr>
-                <td>5</td>
-                <td>Documentation</td>
-                <td><input type="radio" name="5" value="male"> Good
-             <input type="radio" name="5" value="female"> Average
-             <input type="radio" name="5" value="female"> Bad</td>
-              </tr>
-              <tr>
-                <td>6</td>
-                <td>Source Code Evaluation By Committee Members</td>
-                <td><input type="radio" name="6" value="male"> Good
-             <input type="radio" name="6" value="female"> Average
-             <input type="radio" name="6" value="female"> Bad</td>
-              </tr>
-              <tr>
-                <td>7</td>
-                <td>Student Evaluation By Supervisor</td>
-                <td><input type="radio" name="7" value="male"> Good
-             <input type="radio" name="7" value="female"> Average
-             <input type="radio" name="7" value="female"> Bad</td>
-              </tr>
-            </table>
-           
-             
-             
-             
+ <form action="#" method="post">          
+<?php 
+
+$abc1=mysqli_query($con,"select * from question");
+echo "<table border = '1' style='width:100%' >
+<tr>
+<th>ID   </th>
+<th>   Question   </th>
+<th >   Poor   </th>
+<th >   Good   </th>
+<th >   Excellent</th>
+</tr>";
+
+while(list($question_id,$question_text)=mysqli_fetch_array($abc1))
+{
+echo '<tr>';
+echo '<td>' . $question_id . '</td>';
+echo '<td>' . $question_text . '</td>';
+
+echo'      <td align="center"> '?> <input type="radio" name="radio<?php echo $question_id;?>" value="1" required> <?php echo '</td>'; ?>
+<?php echo'<td align="center"> '?> <input type="radio" name="radio<?php echo $question_id;?>" value="2" required><?php echo '</td>';?>
+<?php echo'<td align="center"> '?> <input type="radio" name="radio<?php echo $question_id;?>" value="3" required><?php echo '</td>';?>
+<?php
+echo '</tr>';
+}
+echo '</table>';
+?>  
+
+              
              <button type="submit" class="submit" name="submit">Add</button>
-           </form>
+           </form>      
            </div>
           </div>
       </div>
