@@ -20,15 +20,22 @@ $user_id=$_SESSION['email'];
       <div id="dashboard">
         <h1 class="header"><span class=""></span></h1>
         <div class="quick-press">
-            <h4>Evaluation Form</h4>
+            
             <div class="clearfix">
- <form action="#" method="post">          
+ <form action="#" method="post"><br/>
+ <input type="text" name="email" id="username"  placeholder="Enter student Email">  <br/>
+ <label for="password">Course Code: </label>
+                       <select name="coursecode" >
+                           <option value="403">Itec 403</option>
+                           <option value="404">Itec 404</option>
+                       </select>      
+                       <h4>Evaluation Form</h4>  
 <?php 
 
 $abc1=mysqli_query($con,"select * from question");
 echo "<table border = '1' style='width:100%' >
 <tr>
-<th>ID   </th>
+<th>Q ID   </th>
 <th>   Question   </th>
 <th >   Poor   </th>
 <th >   Good   </th>
