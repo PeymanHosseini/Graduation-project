@@ -356,3 +356,22 @@ body {
   font-weight: normal;
   font-style: normal;
 }
+#img_div {
+  width: 50%;
+  padding: 5px;
+  margin: 15px auto;
+  border: 1px solid #cbcbcb;
+}
+#img_div:after {
+  width: 100%;
+  padding: 5px;
+  content: "";
+  display: block;
+  clear: both;
+}
+img {
+  float: left;
+  margin: 5px;
+  width: 100px;
+  height: 40px;
+}

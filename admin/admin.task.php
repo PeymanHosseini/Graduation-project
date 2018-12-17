@@ -24,6 +24,7 @@ if (isset($_POST['submit']))
 
 }
 $result = mysqli_query($con, "SELECT * FROM task_table");
+
 ?>
 
 
@@ -53,15 +54,33 @@ $result = mysqli_query($con, "SELECT * FROM task_table");
                     placeholder="Say something about this image..."></textarea>
                 </div>
                 <button type="submit" class="submit" name="submit">Upload</button>
+                
             </form>
-            <div>  <?php
+            <div id="image_div">  
+              <?php
     while ($row = mysqli_fetch_array($result)) {
-      echo "<div id='img_div'>";
-      	echo "<img src='../images/".$row['image']."' >";
-      	echo "<p>".$row['text']."</p>";
-      echo "</div>";
-    }
-  ?></div>
+      ?>
+<table border="1" >
+<tr>
+<th>Task ID   </th>
+<th>   Image   </th>
+<th >   Comment   </th>
+<th >   CourseID   </th>
+</tr>
+<tr>
+<td>   <?php echo  $row['id'] ; ?>    </td>
+<td>     <?php echo "<img src='../images/".$row["image"]."' >"; ?>     </td>
+<td>   <?php    echo $row["text"];  ?>    </td>
+<td>   <?php  echo  $row["course_id"] ; ?>   </td>
+</tr>
+
+</table>
+<?php
+}
+?>
+
+
+  </div>
            </div>
           </div>
        </div>
