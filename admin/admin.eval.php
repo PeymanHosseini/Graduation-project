@@ -11,6 +11,7 @@ if(isset($_POST['submit']))
   $user_id=$_SESSION['email'];
   $email = $_POST['email'];
   $course_code=$_POST['coursecode'];
+  $Academic_year=$_POST['academicyear'];
   // Default to null
   $date=null;
   // Only proceed if strtotime() succeeds
@@ -24,7 +25,7 @@ if(isset($_POST['submit']))
 	{
     
 		$evl_val=$_POST['radio'.$question_id];
-		mysqli_query($con,"INSERT INTO `evaluation_table`(`std_email`,`staff_email`, `question_id`, `answer`, `course_id`, `date`) VALUES ('$email','$user_id','$question_id','$evl_val','$course_code' ,'$date')");
+		mysqli_query($con,"INSERT INTO `evaluation_table`(`std_email`,`staff_email`, `question_id`, `answer`, `course_id`, `date`, `accademic_year_id`) VALUES ('$email','$user_id','$question_id','$evl_val','$course_code' ,'$date','$Academic_year')");
 
   }
 }
@@ -39,11 +40,17 @@ if(isset($_POST['submit']))
             <div class="clearfix">
  <form action="#" method="post"><br/>
  <input type="text" name="email" id="username"  placeholder="Enter student Email">  <br/>
- <label for="password">Course Code: </label>
+                       <label >Course Code: </label>
                        <select name="coursecode" >
                            <option value="1">Itec 403</option>
                            <option value="2">Itec 404</option>
-                       </select> &nbsp;&nbsp;  
+                       </select> &nbsp;&nbsp;
+                       <label >Academic Year: </label>  
+                       <select name="academicyear" >
+                           <option value="1">2018</option>
+                           <option value="2">2019</option>
+                           <option value="3">2020</option>
+                       </select> &nbsp;&nbsp; 
                        <label for="date">   Date:     </label>
                       <input type="date"  name="date" id="date"/>  
                        <h4>Evaluation Form</h4>  
