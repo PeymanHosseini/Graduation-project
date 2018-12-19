@@ -380,3 +380,7 @@ img {
   margin: 20px auto;
   border: 1px solid #cbcbcb;
 }
+td div {
+  width: 100px;
+  overflow-y: hidden;
+}

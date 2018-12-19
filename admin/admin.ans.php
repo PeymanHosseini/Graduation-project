@@ -55,7 +55,7 @@ $result = mysqli_query($con, "SELECT * FROM announcement");
               <?php
     while ($row = mysqli_fetch_array($result)) {
       ?>
-<table border="1" >
+<table border="1" width="100%"  >
 <tr>
 <th>ID</th>
 <th>text</th>
@@ -64,7 +64,7 @@ $result = mysqli_query($con, "SELECT * FROM announcement");
 </tr>
 <tr>
 <td align="center">   <?php echo  $row['ann_id'] ; ?>    </td>
-<td align="center">   <?php    echo $row["ann_text"];  ?>    </td>
+<td align="center"><div>   <?php    echo $row["ann_text"];  ?>    </div></td>
 <td align="center">   <?php  echo  $row["date"] ; ?>   </td>
 <td align="center">   <?php  echo  $row["course_id"] ; ?>   </td>
 </tr>
