@@ -35,7 +35,7 @@ $result = mysqli_query($con, "SELECT * FROM task_table");
   <div class="main">
     <div class="mainContent clearfix">
       <div id="media">
-        <h1 class="header"><span class=""></span></h1>
+        
         <div class="quick-press">
             <h4>Add New Task</h4>
             <div class="clearfix">
