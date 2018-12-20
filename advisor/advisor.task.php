@@ -6,7 +6,7 @@ include("header.advisor.php");
     
     <div class="mainContent clearfix">
     
-       <div id="posts">
+       <div id="media">
          <h4 class="header">posts</h4>
        </div>
        </div>
