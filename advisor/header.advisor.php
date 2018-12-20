@@ -32,7 +32,7 @@ if($_SESSION['level']!="advisor"){
     </div>
     <ul >
         <li><a href="advisor.attend.php#dashboard"> Attendance </a></li>
-        <li><a href="advisor.eval.php#posts"> Evaluation Form</a></li>
+        <li><a href="advisor.eval.php#dashboard"> Evaluation Form</a></li>
         <li><a href="advisor.task.php#media"> Tasks</a></li>
         <li><a href="../logout.php"> Logout</a></li>
      </ul>
