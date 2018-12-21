@@ -35,7 +35,6 @@ if($_SESSION['level']!="committee"){
         <li class="current"><a href="#dashboard"> Comments </a></li>
         <li><a href="#posts"> Evaluation Form</a></li>
         <li><a href="#media"> Add Task</a></li>
-        <li><a href="#links"> Uploaded task</a></li>
         <li><a href="#comments"> Add Announcment</a></li>
         <li><a href="logout.php"> Logout</a></li>
      </ul>
