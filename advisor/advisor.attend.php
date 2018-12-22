@@ -20,8 +20,9 @@ if(isset($_POST['submit']))
   $date=date("Y-m-d", $pdate);
   }
     header("location: advisor.attend.php#dashboard.php");
+    $status=$_POST['radio'];
 	
-		mysqli_query($con,"INSERT INTO `attendance`(`std_email`,`staff_email`, `course_id`, `date`) VALUES ('$email','$user_id','$course_code' ,'$date')");
+		mysqli_query($con,"INSERT INTO `attendance`(`std_email`,`staff_email`, `course_id`, `date`, `status`) VALUES ('$email','$user_id','$course_code' ,'$date','$status')");
 }
 ?>
 <div class="main">
@@ -37,7 +38,10 @@ if(isset($_POST['submit']))
                            <option value="2">Itec 404</option>
                        </select> &nbsp;&nbsp;
                        <label for="date">   Date:     </label>
-                      <input type="date"  name="date" id="date"/> 
+                      <input type="date"  name="date" id="date"/> <br/><br/>
+                      <label >Status: </label> 
+                      <input type="radio" name="radio" value="P" required>Present
+                      <input type="radio" name="radio" value="A" required>Absend
                       <button type="submit" class="submit" name="submit">Add</button>
            </form>
          </div>
