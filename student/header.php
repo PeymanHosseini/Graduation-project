@@ -20,7 +20,7 @@ if($_SESSION['level']!="student"){
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Student Panel</title>
     
-    <link href="css/Admin.css" type ="text/css" rel="stylesheet">
+    <link href="../css/Admin.css" type ="text/css" rel="stylesheet">
 </head>
 <body>
 <div class="admin-panel clearfix">
@@ -29,10 +29,10 @@ if($_SESSION['level']!="student"){
       <a href=""></a>
     </div>
     <ul >
-        <li class="current"><a href="#dashboard"> Home </a></li>
-        <li><a href="#media"> Forms</a></li>
-        <li><a href="#pages">Upload Weekly Task</a></li>
-        <li><a href="#comments"> Announcment</a></li>
-        <li><a href="logout.php"> Logout</a></li>
+        <li><a href="home.php#dashboard"> Home </a></li>
+        <li><a href="form.php#dashboard"> Forms</a></li>
+        <li><a href="upload.php#dashboard">Upload Weekly Task</a></li>
+        <li><a href="announce.php#dashboard"> Announcment</a></li>
+        <li><a href="../logout.php"> Logout</a></li>
      </ul>
   </div>
