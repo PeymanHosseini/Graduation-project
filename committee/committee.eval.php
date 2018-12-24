@@ -1,11 +1,6 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "stdsystem";
-$con=mysqli_connect($servername,$username,$password,$dbname);
-
-include("header.committee.php"); 
+include ("../includes/db.inc.php");
+include ("header.committee.php"); 
 if(isset($_POST['submit']))
 {
   $user_id=$_SESSION['email'];

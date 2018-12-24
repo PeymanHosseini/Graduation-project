@@ -23,7 +23,7 @@ if($_SESSION['level']!="committee"){
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Admin Panel</title>
     
-    <link href="css/Admin.css" type ="text/css" rel="stylesheet">
+    <link href="../css/Admin.css" type ="text/css" rel="stylesheet">
 </head>
 <body>
 <div class="admin-panel clearfix">
@@ -32,11 +32,9 @@ if($_SESSION['level']!="committee"){
       <a href=""></a>
     </div>
     <ul >
-        <li class="current"><a href="#dashboard"> Comments </a></li>
-        <li><a href="#posts"> Evaluation Form</a></li>
-        <li><a href="#media"> Add Task</a></li>
-        <li><a href="#links"> Uploaded task</a></li>
-        <li><a href="#comments"> Add Announcment</a></li>
-        <li><a href="logout.php"> Logout</a></li>
+        <li><a href="task.php#dashboard"> Evaluate Tasks </a></li>
+        <li><a href="committee.eval.php#dashboard"> Evaluation Form</a></li>
+        <li><a href="announce.php#comment"> Add Announcment</a></li>
+        <li><a href="../logout.php"> Logout</a></li>
      </ul>
   </div>

@@ -32,10 +32,9 @@ if($_SESSION['level']!="committee"){
       <a href=""></a>
     </div>
     <ul >
-        <li class="current"><a href="#dashboard"> Comments </a></li>
-        <li><a href="#posts"> Evaluation Form</a></li>
-        <li><a href="#media"> Add Task</a></li>
-        <li><a href="#comments"> Add Announcment</a></li>
+        <li><a href="committee/task.php#dashboard"> Evaluate Tasks </a></li>
+        <li><a href="committee/committee.eval.php#dashboard"> Evaluation Form</a></li>
+        <li><a href="committee/announce.php#comment"> Add Announcment</a></li>
         <li><a href="logout.php"> Logout</a></li>
      </ul>
   </div>
