@@ -1,21 +1,32 @@
 <?php
-
 include 'header.php';
+include '../includes/db.inc.php';
+$result = mysqli_query($con, "SELECT * FROM announcement");
 ?>
   <div class="main">
     <div class="mainContent clearfix">
       <div id="dashboard">
         <h1 class="header"><span class=""></span></h1>
          <div class="quick-press">
-           <h4>Quick Press</h4>
-           <form action="" method="post">
-             <input type="text" name="title" placeholder="Title"/>
-             <input type="text" name="content" placeholder="Content"/>
-             <input type="text" name="tags" placeholder="Tags"/>
-             <button type="button" class="save">l</button>
-             <button type="button" class="delet">m</button>
-             <button type="submit" class="submit" name="submit">Publish</button>
-           </form>
+<?php
+echo "<table border = '1' style='width:100%' >
+<tr>
+<th> ID   </th>
+<th>   Information   </th>
+<th >   Date   </th>
+</tr>";
+
+while ($row = mysqli_fetch_array($result)) 
+{
+echo '<tr>';
+echo '<td>' . $row['ann_id'] . '</td>';
+echo '<td>' . $row["ann_text"] . '</td>';
+echo '<td>' . $row["date"] . '</td>';
+echo '</tr>';
+}
+echo '</table>';
+?>  
+
          </div>
        </div>
        </div>

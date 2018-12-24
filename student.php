@@ -28,7 +28,6 @@ if($_SESSION['level']!="student"){
     </div>
     <ul >
         <li><a href="student/home.php#dashboard"> Home </a></li>
-        <li><a href="student/form.php#dashboard"> Forms</a></li>
         <li><a href="student/upload.php#dashboard">Upload Weekly Task</a></li>
         <li><a href="student/announce.php#dashboard"> Announcment</a></li>
         <li><a href="logout.php"> Logout</a></li>
