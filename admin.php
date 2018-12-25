@@ -2,12 +2,18 @@
 session_start();
 //checking if user already login
 if(!isset($_SESSION['email'])){
-    header('Location: login.php?login=youAreNotlogined');
+  echo ("<script LANGUAGE='JavaScript'>
+  window.alert('PLEASE LOGIN TO THE SYSTEM');
+  window.location.href='login.php';
+  </script>");
 }
 //checking user's level
 if($_SESSION['level']!="admin"){
-    header('Location: login.php?login=youAreNotAdmin');
-	
+  echo ("<script LANGUAGE='JavaScript'>
+  window.alert('ONLY ADMIN CAN ACCESS THIS PAGE');
+  window.location.href='login.php';
+  </script>");
+  session_destroy();
 }
 ?>
 <!DOCTYPE html>

@@ -9,7 +9,7 @@ $result = mysqli_query($con, "SELECT * FROM uploaded_file");
     <div class="mainContent clearfix">
       <div id="comment">
       <div class="quick-press">
-            <h4>Post New Announcement</h4>
+            <h4>Add comment on task</h4>
  
           </div><br>
         <div id="">
