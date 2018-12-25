@@ -33,7 +33,7 @@ if($_SESSION['level']!="admin"){
     </div>
     <ul >
         <li ><a href="admin/admin.user.php#dashboard"> User Managment </a></li>
-        <li ><a href="admin/admin.eval.php#post"> Evaluation Form</a></li>
+        <li ><a href="admin/admin.eval.php#dashboard"> Evaluation Form</a></li>
         <li ><a href="admin/admin.task.php#media"> Add Task</a></li>
         <li ><a href="admin/admin.ans.php#comment"> Add Announcment</a></li>
         <li ><a href="logout.php"> Logout</a></li>

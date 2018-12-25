@@ -9,23 +9,23 @@ if(isset($_POST["submit"]))
     $pwd = mysqli_real_escape_string($con, $_POST['password']);
     
     //error handeling
+    // empty field
     if (empty($email) || empty($pwd))
     {
-        header("Location: ../login.php?login=emptyyyy");
+        echo ("<script LANGUAGE='JavaScript'>
+            window.location.href='../LOGIN.php';
+            window.alert('PLEASE  FILL OUT ALL REQUIRED FIELDS ');
+            </script>");
         exit();  
     }
    
-    //Password must contain 6 characters of letters, numbers and at least one special character
-    //elseif(!preg_match('/^(?=.*\d)(?=.*[A-Za-z])(?=.*[!@#$%])[0-9A-Za-z!@#$%]{6,15}$/', $pwd))
-    //{
-    //    header("Location: ../login.php?login=character");
-    //    exit();
-    //}
-
     //check email format 
     elseif (!filter_var($email, FILTER_VALIDATE_EMAIL))
     {
-        header("Location: ../login.php?login=invalidEmail");
+        echo ("<script LANGUAGE='JavaScript'>
+            window.location.href='../LOGIN.php';
+            window.alert('INVALID EMAIL');
+            </script>");
         exit();
     }
 
@@ -43,7 +43,10 @@ if(isset($_POST["submit"]))
                             $hashchek = password_verify($pwd, $row1['password']);
                             if($hashchek == false)
                             {
-                                header("Location: ../login.php?login=passwordIsWrong");
+                                echo ("<script LANGUAGE='JavaScript'>
+                                        window.location.href='../LOGIN.php';
+                                        window.alert('WRONG PASSWORD');
+                                        </script>");
                                 exit();
                             } 
                             else
@@ -51,13 +54,19 @@ if(isset($_POST["submit"]))
                                 
                                 $_SESSION['email']=$row1['std_email'];
                                 $_SESSION['level'] = $row1['level'];
-                                header("Location: ../student.php");
+                                echo ("<script LANGUAGE='JavaScript'>
+                                window.location.href='../student.php';
+                                window.alert('You logged in successfully as student');
+                                </script>");
                                                             
                             }
                         }
                         else
                         {
-                            header("Location: ../login.php?login=emailNotFoundInDataBase");
+                            echo ("<script LANGUAGE='JavaScript'>
+                                window.location.href='../LOGIN.php';
+                                window.alert('EMAIL IS INVALID');
+                                </script>");
                             
                         }
             
@@ -70,23 +79,35 @@ if(isset($_POST["submit"]))
             {
                 $_SESSION['email']=$row1['staff_email'];
                 $_SESSION['level'] =$row1['level'] ;
-                header("Location: ../admin.php");
+                echo ("<script LANGUAGE='JavaScript'>
+                    window.location.href='../admin.php';
+                    window.alert('You logged in successfully as admin');
+                    </script>");
             }
             elseif($row1['level'] == 'advisor')
             {
                 $_SESSION['email']=$row1['staff_email'];
                 $_SESSION['level'] = $row1['level'];
-                header("Location: ../advisor.php");
+                echo ("<script LANGUAGE='JavaScript'>
+                    window.location.href='../advisor.php';
+                    window.alert('You logged in successfully as advisor');
+                    </script>");
             }
             elseif($row1['level'] == 'committee')
             {
                 $_SESSION['email']=$row1['staff_email'];
                 $_SESSION['level'] = $row1['level'];
-                header("Location: ../commitee.php");
+                echo ("<script LANGUAGE='JavaScript'>
+                    window.location.href='../commitee.php';
+                    window.alert('You logged in successfully as committee');
+                    </script>");
             }
             else
             {
-                header("Location: ../login.php?login=ERROOrUserNotValid");
+                echo ("<script LANGUAGE='JavaScript'>
+                    window.location.href='../login.php';
+                    window.alert('User not valid');
+                    </script>");
             }
         }
 

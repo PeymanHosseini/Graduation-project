@@ -19,24 +19,24 @@
                     </div>
                     <div class="form-group">
                         <label for="username">*Email: </label>
-                        <input type="text" name="email" id="email" class="form-control" placeholder="Enter your Email ..." required >
+                        <input type="text" name="email" id="email" class="form-control" placeholder="Enter your Email ..."  >
                         
                     </div>
                     <div class="form-group">
                         <label for="username">*Name: </label>
-                        <input type="text" name="name" id="name" class="form-control" placeholder="Enter your Name ..." required>
+                        <input type="text" name="name" id="name" class="form-control" placeholder="Enter your Name ..." >
                     </div>
                     <div class="form-group">
                         <label for="username">*FamilyName: </label>
-                        <input type="text" name="fname" id="fname" class="form-control" placeholder="Enter your Familyname ..." required>
+                        <input type="text" name="fname" id="fname" class="form-control" placeholder="Enter your Familyname ..." >
                     </div>
                     <div class="form-group">
                         <label for="username">*Telephone: </label>
-                        <input type="text" name="tell" id="usetellrname" class="form-control" placeholder="Enter your Tellephone ..." required>
+                        <input type="text" name="tell" id="usetellrname" class="form-control" placeholder="Enter your Tellephone ..." >
                     </div>
                     <div class="form-group">
                         <label for="password">*Password: </label>
-                        <input type="password" name="password" id="password" class="form-control" placeholder="Enter Password ..."required>
+                        <input type="password" name="password" id="password" class="form-control" placeholder="Enter Password ...">
                     </div>
                     <div class="form-group">
                         <label for="password">Course Code: </label>
