@@ -1,17 +1,7 @@
 <?php
 include ("../includes/db.inc.php");
 include ("header.committee.php");
-// If upload button is clicked ...
-if (isset($_POST['submit'])) 
-{
 
-  $text = mysqli_real_escape_string($con, $_POST['text']);
- 
-  $sql = "UPDATE `uploaded_file` SET `teacher_comment`=[$text] WHERE `id` = [$sid] ";
-  // execute query
-  mysqli_query($con, $sql);
-  
-}
 $result = mysqli_query($con, "SELECT * FROM uploaded_file");
 
 ?>
@@ -26,7 +16,7 @@ $result = mysqli_query($con, "SELECT * FROM uploaded_file");
             
               <?php
     while ($row = mysqli_fetch_array($result)) {
-        $sid= $row['id'];
+       $sid= $row['upload_id'];
       ?>
 <table border="1" width="100%"  >
 <tr>
@@ -36,7 +26,7 @@ $result = mysqli_query($con, "SELECT * FROM uploaded_file");
 <th >Text</th>
 </tr>
 <tr>
-<td align="center">   <?php echo  $row['id'] ; ?>    </td>
+<td align="center">   <?php echo  $row['upload_id'] ; ?>    </td>
 <td align="center"><div>   <?php    echo $row["std_email"];  ?>    </div></td>
 <td align="center">   <?php  echo  $row["files"] ; ?>   </td>
 <td align="center">   <?php  echo  $row["text"] ; ?>   </td>
@@ -44,7 +34,7 @@ $result = mysqli_query($con, "SELECT * FROM uploaded_file");
 </table><br>
 <table>
 <tr>
-<form action="">
+<form action="#" method="post">
 <textarea 
                     id="text2" 
                     cols="50" 
@@ -57,6 +47,17 @@ $result = mysqli_query($con, "SELECT * FROM uploaded_file");
 </tr>
 </table><br>
 <?php
+}
+// If upload button is clicked ...
+if (isset($_POST['submit'])) 
+{
+  $user_id=$_SESSION['email'];
+  $text = mysqli_real_escape_string($con, $_POST['text2']);
+ 
+  $sql = "INSERT INTO `comment`( `text`, `upload_id`, `staff_email`) VALUES ('$text','$sid','$user_id') ";
+  // execute query
+  mysqli_query($con, $sql);
+  
 }
 ?>
 
