@@ -34,20 +34,17 @@ $result = mysqli_query($con, "SELECT * FROM uploaded_file");
 </table><br>
 <table>
 <tr>
-<form action="#" method="post">
-<textarea 
-                    id="text2" 
-                    cols="50" 
-                    rows="4" 
-                    name="text2" 
-                    placeholder="Add Comments to the task"></textarea><br>
-                    <button type="submit" class="submit" name="submit">Post</button>
-
-</form>
-</tr>
-</table><br>
 <?php
-}
+echo " <form action='#' method='post'>
+<textarea 
+                    id='text2' 
+                    cols='50' 
+                    rows='4' 
+                    name='text2' 
+                    placeholder='Add Comments to the task'></textarea><br>
+                    <button type='submit' class='submit' name='submit'>Post</button>
+
+</form>"; 
 // If upload button is clicked ...
 if (isset($_POST['submit'])) 
 {
@@ -58,7 +55,16 @@ if (isset($_POST['submit']))
   // execute query
   mysqli_query($con, $sql);
   
+  
 }
+
+
+?>
+</tr>
+</table><br>
+<?php
+}
+
 ?>
 
 
