@@ -22,31 +22,50 @@ $result = mysqli_query($con, "SELECT * FROM staff_table");
              <input type="text" name="office" placeholder="Office"/>
              <input type="text" name="level" placeholder="Level"/>
              <button type="submit" class="submit2" name="submit2">Delete</button>
+
              <button type="submit" class="submit" name="submit">Add</button>
-           </form><br/><br/>
-           </div>
+           </form>
+           </div><br/><br/>
           
-           <?php
+           
    
-   echo "<table border = '1' style='width:100%' >
+   <table border = '1' style='width:100%' >
    <tr>
    <th>     ID    </th>
    <th>   Email   </th>
    <th >   Name   </th>
    <th >  Surname </th>
    <th >   Level  </th>
-   </tr>";
+   <th >   Edit  </th>
+   <th >   Delete  </th>
+   </tr>
+   <?php
    while ($row = mysqli_fetch_array($result))
-   {
-   echo '<tr>';
-   echo '<td>' . $row['staff_id'] . '</td>';
-   echo '<td>' . $row['staff_email'] . '</td>';
-   echo '<td>' . $row['staff_name'] . '</td>';
-   echo '<td>' . $row['staff_fname'] . '</td>';
-   echo '<td>' . $row['level'] . '</td>';
-   
+   {?>
+   <tr>
+    <td> <?php echo $row['staff_id'] ;?>    </td>
+    <td> <?php echo $row['staff_email']; ?> </td>
+    <td> <?php echo $row['staff_name'] ;?>  </td>
+    <td> <?php echo $row['staff_fname']; ?> </td>
+    <td> <?php echo $row['level'];  ?>      </td>
+    <td> <a href="edit.php?edit_id=<?php echo $row['staff_id']; ?>" alt="edit">Edit</a>     </td>
+    <td> <input type="button" onclick ="deleteme(<?php echo $row['staff_id']; ?>)" name="delete" value="delete"></td>
+    </tr>
+    <?php
    }
-   ?>
+   ?></table>
+    <script language="javascript">
+      function deleteme(delid){
+      if(confirm("do u want to delete?")){
+      window.location.href='  delete.php?del_id=' +delid+ '';
+      return true;
+    }
+
+    }
+    
+    
+    </script>
+   
  
            </div>
          </div>      
