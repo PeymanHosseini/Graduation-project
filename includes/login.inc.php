@@ -56,7 +56,7 @@ if(isset($_POST["submit"]))
                                 $_SESSION['level'] = $row1['level'];
                                 echo ("<script LANGUAGE='JavaScript'>
                                 window.location.href='../student.php';
-                                window.alert('You logged in successfully as student');
+                                window.alert('You logged in successfully as a student');
                                 </script>");
                                                             
                             }
@@ -81,7 +81,7 @@ if(isset($_POST["submit"]))
                 $_SESSION['level'] =$row1['level'] ;
                 echo ("<script LANGUAGE='JavaScript'>
                     window.location.href='../admin.php';
-                    window.alert('You logged in successfully as admin');
+                    window.alert('You logged in successfully as a admin');
                     </script>");
             }
             elseif($row1['level'] == 'advisor')
@@ -90,7 +90,7 @@ if(isset($_POST["submit"]))
                 $_SESSION['level'] = $row1['level'];
                 echo ("<script LANGUAGE='JavaScript'>
                     window.location.href='../advisor.php';
-                    window.alert('You logged in successfully as advisor');
+                    window.alert('You logged in successfully as a advisor');
                     </script>");
             }
             elseif($row1['level'] == 'committee')
@@ -99,7 +99,7 @@ if(isset($_POST["submit"]))
                 $_SESSION['level'] = $row1['level'];
                 echo ("<script LANGUAGE='JavaScript'>
                     window.location.href='../commitee.php';
-                    window.alert('You logged in successfully as committee');
+                    window.alert('You logged in successfully as a committee');
                     </script>");
             }
             else
