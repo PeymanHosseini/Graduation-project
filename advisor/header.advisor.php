@@ -23,6 +23,7 @@ if($_SESSION['level']!="advisor"){
     <title>Advisor Panel</title>
     
     <link href="../css/Admin.css" type ="text/css" rel="stylesheet">
+    <script src="../index.js" ></script>
 </head>
 <body>
 <div class="admin-panel clearfix">

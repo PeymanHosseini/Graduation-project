@@ -1,6 +1,6 @@
 <?php
 include '../includes/db.inc.php';
-include 'header.advisor.php';
+include 'header.committee.php';
 // If upload button is clicked ...
 if (isset($_POST['submit'])) 
 {
@@ -15,7 +15,7 @@ if (isset($_POST['submit']))
         mysqli_query($con, $sql);
 
     echo ("<script LANGUAGE='JavaScript'>
-             window.location.href='advisor.pass.php#media';
+             window.location.href='committee.pass.php#media';
              window.alert('your password is updted');
              </script>");
   
