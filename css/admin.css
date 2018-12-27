@@ -257,7 +257,7 @@ body {
 }
 .quick-press .submit2 {
   float: right;
-  width: 70px;
+  width: 60px;
   border: 1px solid rgb(238, 64, 64);
   color: #fff;
   font-size: 16px;
@@ -265,6 +265,22 @@ body {
   background: -moz-linear-gradient(top, rgb(245, 101, 82), rgb(234, 83, 63));
   background: -ms-linear-gradient(top, rgb(245, 101, 82), rgb(234, 83, 63));
   background: linear-gradient(top, rgb(245, 101, 82), rgb(234, 83, 63));
+}
+.quick-press .submit3 {
+  float: right;
+  width: 60px;
+  border: 1px solid rgb(238, 64, 64);
+  color: #fff;
+  text-align: center;
+  font-size: 16px;
+  background: -webkit-linear-gradient(
+    top,
+    rgb(60, 105, 252),
+    rgb(60, 105, 252)
+  );
+  background: -moz-linear-gradient(top, rgb(60, 105, 252), rgb(60, 105, 252));
+  background: -ms-linear-gradient(top, rgb(60, 105, 252), rgb(60, 105, 252));
+  background: linear-gradient(top, rgb(60, 105, 252), rgb(60, 105, 252));
 }
 
 .quick-press .submit:hover {
@@ -278,6 +294,12 @@ body {
   background: -moz-linear-gradient(top, rgb(165, 2, 2), rgb(165, 2, 2));
   background: -ms-linear-gradient(top, rgb(165, 2, 2), rgb(165, 2, 2));
   background: linear-gradient(top, rgb(165, 2, 2), rgb(165, 2, 2));
+}
+.quick-press .submit3:hover {
+  background: -webkit-linear-gradient(top, rgb(3, 80, 131), rgb(3, 80, 131));
+  background: -moz-linear-gradient(top, rgb(3, 80, 131), rgb(3, 80, 131));
+  background: -ms-linear-gradient(top, rgb(3, 80, 131), rgb(3, 80, 131));
+  background: linear-gradient(top, rgb(3, 80, 131), rgb(3, 80, 131));
 }
 /*logo*/
 .logo a {

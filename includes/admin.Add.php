@@ -27,32 +27,12 @@ if(isset($_POST["submit"]))
     $level=  $_POST['level'];
     $sql = "INSERT INTO `staff_table`(`staff_email`,`password`, `staff_name`, `staff_fname`, `staff_office`,`level`) VALUES ('$email','$pwd','$name','$fname','$office','$level')";
     mysqli_query($con,$sql);
-    header("Location: ../admin.php#dashboard");
+    echo ("<script LANGUAGE='JavaScript'>
+            window.location.href='../admin/admin.user.php#dashboard';
+            window.alert('Staff is added to the data base ');
+            </script>");
+        exit();
 
 }
-if(isset($_POST["submit2"]))
-{
-
-    //connect to database
-    include_once 'db.inc.php'; 
-    
-    // collect the data from form
-    $email =  $_POST['email'];
-    $pwd = $_POST['password'];
-    $name =  $_POST['name'];
-    $fname = $_POST['surname'];
-    $office= $_POST['office'];
-    $level=  $_POST['level'];
-    $sql = "DELETE FROM `staff_table` WHERE `staff_table`.`staff_email` = '$email'";
-    mysqli_query($con,$sql);
-    header("Location: ../admin.php#dashboard");
-
-}
-
-
-
-
-
-
 
 ?>

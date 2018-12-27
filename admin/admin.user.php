@@ -1,10 +1,6 @@
 <?php
 include 'header.php';
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "stdsystem";
-$con=mysqli_connect($servername,$username,$password,$dbname);
+include '../includes/db.inc.php';
 $result = mysqli_query($con, "SELECT * FROM staff_table");
 ?>
   <div class="main">
@@ -21,8 +17,6 @@ $result = mysqli_query($con, "SELECT * FROM staff_table");
              <input type="text" name="surname" placeholder="Surname"/>
              <input type="text" name="office" placeholder="Office"/>
              <input type="text" name="level" placeholder="Level"/>
-             <button type="submit" class="submit2" name="submit2">Delete</button>
-
              <button type="submit" class="submit" name="submit">Add</button>
            </form>
            </div><br/><br/>
@@ -48,8 +42,8 @@ $result = mysqli_query($con, "SELECT * FROM staff_table");
     <td> <?php echo $row['staff_name'] ;?>  </td>
     <td> <?php echo $row['staff_fname']; ?> </td>
     <td> <?php echo $row['level'];  ?>      </td>
-    <td> <a href="edit.php?edit_id=<?php echo $row['staff_id']; ?>" alt="edit">Edit</a>     </td>
-    <td> <input type="button" onclick ="deleteme(<?php echo $row['staff_id']; ?>)" name="delete" value="delete"></td>
+    <td> <a  href="edit.php?edit_id=<?php echo $row['staff_id']; ?>" alt="edit" class="submit3" >Edit</a>     </td>
+    <td> <input type="button" onclick ="deleteme(<?php echo $row['staff_id']; ?>)" name="delete" value="Delete" class="submit2"></td>
     </tr>
     <?php
    }
