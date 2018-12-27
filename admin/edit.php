@@ -15,8 +15,10 @@ if(isset($_POST['btn-update'])){
  $email = $_POST['email'];
  $office = $_POST['office'];
  $level = $_POST['level'];
+ $stdid = $_POST['std'];
+ $course = $_POST['course'];
  
- $update = "UPDATE staff_table SET `staff_name` = '$name', `staff_fname`='$fname',`staff_email`='$email',`staff_office`='$office',`level`='$level' WHERE `staff_id`='".$_GET['edit_id']."'";
+ $update = "UPDATE staff_table SET `staff_name` = '$name', `staff_fname`='$fname',`staff_email`='$email',`staff_office`='$office',`level`='$level',`std_id`='$stdid',`course_id`='$course' WHERE `staff_id`='".$_GET['edit_id']."'";
  $up = mysqli_query($con, $update);
  if(!isset($sql)){
  die ("Error $sql" .mysqli_connect_error());
@@ -38,6 +40,8 @@ if(isset($_POST['btn-update'])){
 <label>Email: </label><input type="text" name="email" placeholder="email" value="<?php echo $row['staff_email']; ?>"><br/><br/>
 <label>Office: </label><input type="text" name="office" placeholder="office" value="<?php echo $row['staff_office']; ?>"><br/><br/>
 <label>Level: </label><input type="text" name="level" placeholder="level" value="<?php echo $row['level']; ?>"><br/><br/>
+<label>Student ID: </label><input type="text" name="std" placeholder="stdid" value="<?php echo $row['std_id']; ?>"><br/><br/>
+<label>Course ID: </label><input type="text" name="course" placeholder="course" value="<?php echo $row['course_id']; ?>"><br/><br/>
 <button type="submit" name="btn-update" id="btn-update" onClick="update()"><strong>Update</strong></button>
 <a href="admin.user.php#dashboard"><button type="button" value="button">Cancel</button></a>
 </form>
