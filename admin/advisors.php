@@ -6,7 +6,8 @@ $result2 = mysqli_query($con, "SELECT * FROM student_table");
 ?>
   <div class="main">
     <div class="mainContent clearfix">
-      <div id="dashboard"><br>
+      <div id="dashboard">
+      <div class="quick-press"><br>
    <table border = '1' style='width:100%' >
    <tr>
    <th>     ID    </th>
