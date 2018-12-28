@@ -1,9 +1,5 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "stdsystem";
-$con=mysqli_connect($servername,$username,$password,$dbname);
+include '../includes/db.inc.php';
 
 include("header.advisor.php");
 if(isset($_POST['submit']))
