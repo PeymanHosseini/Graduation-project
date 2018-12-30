@@ -17,7 +17,7 @@ $result2 = mysqli_query($con, "SELECT * FROM student_table");
    <th >   Advisor_id  </th>
    <th >  UML  </th>
    <th >  DB  </th>
-   <th >  CODE  </th>
+   <th >  Code  </th>
    <th >  Report  </th>
    
    </tr>

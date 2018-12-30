@@ -14,7 +14,7 @@ if(isset($_POST['submit']))
   // Since we have a valid time, turn to date string
   $date=date("Y-m-d", $pdate);
  }
-    header("location: admin.eval.php#dashboard");
+   
 	
     $q1=$_POST['radio1'];
     $q2=$_POST['radio2'];
@@ -26,6 +26,11 @@ if(isset($_POST['submit']))
     $q8=$_POST['radio8'];
     $q9=$_POST['radio9'];
     mysqli_query($con,"INSERT INTO `db_eval`(`std_id`,`staff_email`,`date`,`q1`,`q2`,`q3`,`q4`,`q5`,`q6`,`q7`,`q8`,`q9`) VALUES ('$studentid','$user_id' ,'$date','$q1','$q2','$q3','$q4','$q5','$q6','$q7','$q8','$q9')");
+
+    echo ("<script LANGUAGE='JavaScript'>
+    window.location.href='admin.eval.php#dashboard';
+    window.alert('Evaluation form is  added to the data base ');
+    </script>");
 
   $abc1=mysqli_query($con,"select * from question");
 }

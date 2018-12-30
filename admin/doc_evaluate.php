@@ -14,27 +14,22 @@ if(isset($_POST['submit']))
   // Since we have a valid time, turn to date string
   $date=date("Y-m-d", $pdate);
  }
- 
-    $q1=$_POST['radio10'];
-    $q2=$_POST['radio11'];
-    $q3=$_POST['radio12'];
-    $q4=$_POST['radio13'];
-    $q5=$_POST['radio14'];
-    $q6=$_POST['radio15'];
-    $q7=$_POST['radio16'];
-    $q8=$_POST['radio17'];
-    $q9=$_POST['radio18'];
-    $q10=$_POST['radio19'];
-    $q11=$_POST['radio20'];
-    $q12=$_POST['radio21'];
-    $q13=$_POST['radio22'];
-    $q14=$_POST['radio23'];
-    mysqli_query($con,"INSERT INTO `uml_eval`(`std_id`,`staff_email`,`date`,`q1`,`q2`,`q3`,`q4`,`q5`,`q6`,`q7`,`q8`,`q9`,`q10`,`q11`,`q12`,`q13`,`q14`) VALUES ('$studentid','$user_id' ,'$date','$q1','$q2','$q3','$q4','$q5','$q6','$q7','$q8','$q9','$q10','$q11','$q12','$q13','$q14')");
-echo ("<script LANGUAGE='JavaScript'>
+	
+    $q1=$_POST['radio24'];
+    $q2=$_POST['radio25'];
+    $q3=$_POST['radio26'];
+    $q4=$_POST['radio27'];
+    $q5=$_POST['radio28'];
+    $q6=$_POST['radio29'];
+    $q7=$_POST['radio30'];
+
+    mysqli_query($con,"INSERT INTO `doc_eval`(`std_id`,`staff_email`,`date`,`q1`,`q2`,`q3`,`q4`,`q5`,`q6`,`q7`) VALUES ('$studentid','$user_id' ,'$date','$q1','$q2','$q3','$q4','$q5','$q6','$q7')");
+
+    echo ("<script LANGUAGE='JavaScript'>
  window.location.href='admin.eval.php#dashboard';
  window.alert('Evaluation form is added to the data base ');
  </script>");
-	
+
   $abc1=mysqli_query($con,"select * from question");
 }
 
@@ -65,7 +60,7 @@ echo "<table border = '2' style='width:75%' >
 while(list($question_id,$question_text)=mysqli_fetch_array($abc1))
 {   
 
-    if ($question_id < "10"   ) {continue;}
+    if ($question_id < "24"   ) {continue;}
     else{
 echo '<tr>';
 
@@ -78,7 +73,7 @@ echo' <td align="center"> '?> <input type="radio" name="radio<?php echo $questio
 <?php
 
 echo '</tr>';
-if($question_id == "23")break;}
+if($question_id == "30")break;}
 
 }
 

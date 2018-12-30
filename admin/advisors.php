@@ -17,7 +17,7 @@ $result2 = mysqli_query($con, "SELECT * FROM student_table");
    <th >   Course  </th>
    <th >   Advisor_id  </th>
    <th >  Edit  </th>
-   <th >  Evaluate  </th>
+   
    
    </tr>
    <?php
@@ -31,7 +31,7 @@ $result2 = mysqli_query($con, "SELECT * FROM student_table");
     <td> <?php echo $row2['std_course'];  ?>      </td>
     <td> <?php echo $row2['staff_id'];  ?>      </td>
     <td> <a  href="editadvisors.php?edit2_id=<?php echo $row2['std_id']; ?>" alt="edit" class="submit2" >Edit</a>     </td>
-    <td> <a  href="evaluate.php?edit2_id=<?php echo $row2['std_id']; ?>" alt="edit" class="submit2" > Evaluate </a>     </td>
+ 
     <?php
    }
    ?></table>
