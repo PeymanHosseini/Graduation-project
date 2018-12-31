@@ -43,8 +43,11 @@ if($_SESSION['level']!="student" || $_SESSION['course'] != 403){
     
     <div class="mainContent clearfix">
       <div id="dashboard">
-        <h3 class="header"><span class=""><h1 class="header"><span class="">Welcome <?php echo ($_SESSION['name'])?> to Itec 403 HomePage</span></h1></span></h3>
-     </div>
+      <div class="quick-press">
+        <h3 class="header"><span class=""><h1 class="header"><span class="">Welcome <font  color="red"> <?php echo ($_SESSION['name'])?></font> to the Itec 403 HomePage</span></h1></span></h3>
+        <p>
+<h3>This course is the first stage of the two-semester long graduation project (capstone project) of the IT program.<br> The students are required to form teams, find a project supervisor from the department and propose a real life project to the graduation project committee.<br> Each team should explore the needs and requirements of their project, carry out systems design and develop a prototype, if possible, of their project under the guidance of their project supervisors.</h3></p>
+     </div></div>
      
    </div>
 </div>

@@ -43,7 +43,9 @@ if($_SESSION['level']!="student" || $_SESSION['course'] != 404){
     
     <div class="mainContent clearfix">
       <div id="dashboard">
-        <h1 class="header"><span class="">Welcome <?php echo ($_SESSION['name'])?> to Itec 404 HomePage</span></h1>
+      <div class="quick-press">
+        <h1 class="header"><span class="">Welcome<font  color="red"> <?php echo ($_SESSION['name'])?> </font>to the Itec 404 HomePage</span></h1>
+        <h3>This course is the final phase of the two semester long graduation project of the IT program.<br> The students are required to implement their projects and present to a jury which is formed by the graduation project committee.<br> The final submission includes functional software / hardware package, user and system reference manuals and a final report which includes all the details of the procedures, performance checks, and testing results.</h3></div>
      </div>
      
    </div>
