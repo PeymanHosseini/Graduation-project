@@ -41,7 +41,7 @@ if($_SESSION['level']!="admin"){
      </ul>
   </div>
   <div class="main">
- <h4>Hello  <?php echo ($_SESSION['email']);?></h4>
+  <h3 class="header"><span class=""><h1 class="header"><span class="">Welcome <font  color="red"> <?php echo ($_SESSION['name'])?></font> to the Itec 403-404 HomePage</span></h1></span></h3>
        <div class="mainContent clearfix">
        <div id="posts">
         <h1 class="header"><span class=""></span></h1>

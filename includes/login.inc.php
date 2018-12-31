@@ -94,6 +94,7 @@ if(isset($_POST["submit"]))
             {
                 $_SESSION['email']=$row1['staff_email'];
                 $_SESSION['level'] =$row1['level'] ;
+                $_SESSION['name'] = $row1['staff_name'];
                 echo ("<script LANGUAGE='JavaScript'>
                     window.location.href='../admin.php';
                     window.alert('You logged in successfully as a admin');
