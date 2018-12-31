@@ -8,9 +8,9 @@ if(!isset($_SESSION['email'])){
   </script>");
 }
 //checking user's level
-if($_SESSION['level']!="student" || $_SESSION['course'] != 404){
+if($_SESSION['level']!="student" || $_SESSION['course'] != 403){
   echo ("<script LANGUAGE='JavaScript'>
-  window.alert('ONLY Itec404 STUDENTS CAN ACCESS THIS PAGE');
+  window.alert('ONLY Itec403 STUDENTS CAN ACCESS THIS PAGE');
   window.location.href='login.php';
   </script>");
   session_destroy();
@@ -30,10 +30,10 @@ if($_SESSION['level']!="student" || $_SESSION['course'] != 404){
 <div class="admin-panel clearfix">
   <div class="slidebar">
     <div class="logo">
-      <a href="../student.php#dashboard"></a>
+      <a href="../student403.php#dashboard"></a>
     </div>
     <ul >
-        <li><a href="../student.php#dashboard"> Home </a></li>
+        <li><a href="../student403.php#dashboard"> Home </a></li>
         <li><a href="upload.php#dashboard">Upload Weekly Task</a></li>
         <li><a href="announce.php#dashboard"> Announcment</a></li>
         <li><a href="../logout.php"> Logout</a></li>

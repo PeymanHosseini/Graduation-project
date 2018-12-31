@@ -51,14 +51,29 @@ if(isset($_POST["submit"]))
                             } 
                             else
                             {
+                                if($row1['std_course']== '403'){
+                                    
+                                    $_SESSION['email']=$row1['std_email'];
+                                    $_SESSION['level'] = $row1['level'];
+                                    $_SESSION['course'] = $row1['std_course'];
+                                    $_SESSION['name'] = $row1['std_name'];
+                                    echo ("<script LANGUAGE='JavaScript'>
+                                    window.location.href='../student403.php#dashboard';
+                                    window.alert('You logged in successfully as a student');
+                                    </script>");
+                                }
+                                else {
+                                    
                                 
                                 $_SESSION['email']=$row1['std_email'];
                                 $_SESSION['level'] = $row1['level'];
+                                $_SESSION['course'] = $row1['std_course'];
+                                $_SESSION['name'] = $row1['std_name'];
                                 echo ("<script LANGUAGE='JavaScript'>
-                                window.location.href='../student.php';
+                                window.location.href='../student.php#dashboard';
                                 window.alert('You logged in successfully as a student');
                                 </script>");
-                                                            
+                                        }                    
                             }
                         }
                         else
