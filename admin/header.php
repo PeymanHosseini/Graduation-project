@@ -31,7 +31,7 @@ if($_SESSION['level']!="admin"){
         <li ><a href="advisors.php#dashboard"> Asign Advisor </a></li>
         <li ><a href="admin.eval.php#dashboard"> Evaluation Form</a></li>
         <li ><a href="admin.task.php#media"> Add Task</a></li>
-        <li ><a href="admin.ans.php#comment"> Add Announcment</a></li>
+        <li ><a href="admin.ans.php#comment"> Add Announcement</a></li>
         <li ><a href="../logout.php"> Logout</a></li>
      </ul>
      </div>

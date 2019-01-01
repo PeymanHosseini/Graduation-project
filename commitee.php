@@ -40,7 +40,7 @@ if($_SESSION['level']!="committee"){
     <ul >
         <li><a href="committee/task.php#comment"> Evaluate Tasks </a></li>
         <li><a href="committee/committee.eval.php#dashboard"> Evaluation Form</a></li>
-        <li><a href="committee/announce.php#comment"> Add Announcment</a></li>
+        <li><a href="committee/announce.php#comment"> Add Announcement</a></li>
         <li><a href="committee/committee.pass.php#media"> Update Password</a></li>
         <li><a href="logout.php"> Logout</a></li>
      </ul>
