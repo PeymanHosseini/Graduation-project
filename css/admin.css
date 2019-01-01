@@ -401,6 +401,8 @@ img {
   width: 100%;
   margin: 20px auto;
   border: 1px solid #cbcbcb;
+  display: inline-block;
+  position: absolute;
 }
 td div {
   width: 100px;
