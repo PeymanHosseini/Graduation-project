@@ -1,7 +1,7 @@
 <?php
 include 'header.php';
 include '../includes/db.inc.php';
-$result = mysqli_query($con, "SELECT * FROM announcement");
+$result = mysqli_query($con, "SELECT * FROM `announcement` WHERE `course_id`= '2'");
 ?>
   <div class="main">
     <div class="mainContent clearfix">
