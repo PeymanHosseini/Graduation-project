@@ -2,7 +2,7 @@
 include 'header.advisor.php';
 include '../includes/db.inc.php';
 
-$result2 = mysqli_query($con, "SELECT * FROM student_table");
+$result2 = mysqli_query($con, "SELECT * FROM student_table  WHERE `staff_id`= '2' ");
 ?>
   <div class="main">
     <div class="mainContent clearfix">

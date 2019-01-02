@@ -36,12 +36,12 @@ $q1=$_POST['radio'];
  <form action="#" method="post"><br/>
 <h4> Attendance</h4> 
 <label for="date">   Date:     </label>
-<input type="date"  name="date" id="date"/><br><br> 
+<input type="date"  name="date" id="date"/><br>
 <label >Course Code: </label>
                   <select name="coursecode" >
                       <option value="1">Itec 403</option>
                       <option value="2">Itec 404</option>
-                  </select>
+                  </select><br>
 <table border = '2' style='width:75%' >
 <tr>
 <th>student Id</th>
