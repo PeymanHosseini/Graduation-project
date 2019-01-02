@@ -35,14 +35,14 @@ if(isset($_POST["submit"]))
         //staff
         $query1 = mysqli_query($con, "SELECT * FROM staff_table WHERE staff_email='$email' AND password='$pwd'");
         if(mysqli_num_rows($query1) == 0)
-        {
+        {               // check student user  
                         $query2 = mysqli_query($con, "SELECT * FROM student_table WHERE std_email='$email'");
                         if(mysqli_num_rows($query2) == 1)
                         {
                             $row1 = mysqli_fetch_assoc($query2);
                             $hashchek = password_verify($pwd, $row1['password']);
                             if($hashchek == false)
-                            {
+                            { // wrong password input
                                 echo ("<script LANGUAGE='JavaScript'>
                                         window.location.href='../LOGIN.php';
                                         window.alert('WRONG PASSWORD');
@@ -50,7 +50,7 @@ if(isset($_POST["submit"]))
                                 exit();
                             } 
                             else
-                            {
+                            { // sepration between courses
                                 if($row1['std_course']== '403'){
                                     
                                     $_SESSION['email']=$row1['std_email'];
@@ -89,7 +89,7 @@ if(isset($_POST["submit"]))
         else
         {
             $row1 = mysqli_fetch_assoc($query1);
-
+            //admin login
             if($row1['level'] == 'admin')
             {
                 $_SESSION['email']=$row1['staff_email'];
@@ -101,14 +101,14 @@ if(isset($_POST["submit"]))
                     </script>");
             }
             elseif($row1['level'] == 'advisor')
-            {
+            {// advisor login
                 $_SESSION['email']=$row1['staff_email'];
                 $_SESSION['level'] = $row1['level'];
                 echo ("<script LANGUAGE='JavaScript'>
                     window.location.href='../advisor.php';
                     window.alert('You logged in successfully as a advisor');
                     </script>");
-            }
+            } // committee login
             elseif($row1['level'] == 'committee')
             {
                 $_SESSION['email']=$row1['staff_email'];

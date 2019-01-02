@@ -1,52 +1,42 @@
 <?php
+include 'header.advisor.php';
 include '../includes/db.inc.php';
 
-include("header.advisor.php");
-if(isset($_POST['submit']))
-{
-  $user_id=$_SESSION['email'];
-  $email = $_POST['email'];
-  $course_code=$_POST['coursecode'];
-  $Academic_year=$_POST['academicyear'];
-  // Default to null
-  $date=null;
-  // Only proceed if strtotime() succeeds
-  if($pdate=strtotime($_POST['date'])) {
-  // Since we have a valid time, turn to date string
-  $date=date("Y-m-d", $pdate);
-  }
-    header("location: advisor.attend.php#dashboard.php");
-    $status=$_POST['radio'];
-	
-		mysqli_query($con,"INSERT INTO `attendance`(`std_email`,`staff_email`, `course_id`, `date`, `status`) VALUES ('$email','$user_id','$course_code' ,'$date','$status')");
-}
+$result2 = mysqli_query($con, "SELECT * FROM student_table");
 ?>
-<div class="main">
-    
+  <div class="main">
     <div class="mainContent clearfix">
       <div id="dashboard">
-         <div class="quick-press">
-           <form action="#" method="post"><br/>
- <input type="text" name="email" id="username"  placeholder="Enter student Email">  <br/>
-                       <label >Course Code: </label>
-                       <select name="coursecode" >
-                           <option value="1">Itec 403</option>
-                           <option value="2">Itec 404</option>
-                       </select> &nbsp;&nbsp;
-                       <label for="date">   Date:     </label>
-                      <input type="date"  name="date" id="date"/> <br/><br/>
-                      <label >Status: </label> 
-                      <input type="radio" name="radio" value="P" required>Present
-                      <input type="radio" name="radio" value="A" required>Absend
-                      <button type="submit" class="submit" name="submit">Add</button>
-           </form>
-         </div>
-         </div>
-      </div>
+      <div class="quick-press"><br>
+   <table border = '1' style='width:100%' >
+   <tr>
+   <th>     ID    </th>
+   <th >   Name   </th>
+   <th >  Surname </th>
+   <th >   Course  </th>
+   <th >  Attendance </th>
+  
+   
+   </tr>
+   <?php
+   while ($row2 = mysqli_fetch_array($result2))
+   {?>
+   <tr>
+    <td> <?php echo $row2['std_id'] ;?>    </td>
+    <td align="center"> <?php echo $row2['std_name'] ;?>  </td>
+    <td align="center"> <?php echo $row2['std_fname']; ?> </td>
+    <td align="center"> <?php echo $row2['std_course'];  ?>      </td>
+    <td align="center" > <a  href="attendance.php?edit2_id=<?php echo $row2['std_id']; ?>" alt="edit"  >Attendance</a>     </td>
+
+    <?php
+   }
+   ?></table>
+    
+   
+ 
+           </div>
+         </div>      
+       </div>  
      </div> 
-   </div>
-</div>
 </body>
 </html>
-      
-   

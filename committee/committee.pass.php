@@ -21,10 +21,7 @@ if (isset($_POST['submit']))
   
 
 }
-
 ?>
-
-
   <div class="main">
     <div class="mainContent clearfix">
       <div id="media">
