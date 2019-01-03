@@ -17,9 +17,17 @@ $result2 = mysqli_query($con, "SELECT * FROM student_table");
              <input type="text" name="name" placeholder="Name"/>
              <input type="text" name="surname" placeholder="Surname"/>
              <input type="text" name="office" placeholder="Office"/>
-             <input type="text" name="level" placeholder="Level"/>
-             <input type="text" name="std_id" placeholder="Student ID"/>
-             <input type="text" name="course" placeholder="Course ID"/>
+             <input type="text" name="std_id" placeholder="Student ID"/><br>
+             <label >Course Code: </label>
+                       <select name="course" >
+                           <option value="1">Itec 403</option>
+                           <option value="2">Itec 404</option>
+                       </select><br><br>
+                       <label >Level: </label>
+                       <select name="level" >
+                           <option value="committee">committee</option>
+                           <option value="advior">advior</option>
+                       </select>
              <button type="submit" class="submit" name="submit">Add</button>
            </form>
            </div><br/><br/>
