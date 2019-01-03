@@ -1,8 +1,8 @@
 <?php
 include 'header.advisor.php';
 include '../includes/db.inc.php';
-
-$result2 = mysqli_query($con, "SELECT * FROM student_table  WHERE `staff_id`= '2' ");
+$staffid= $_SESSION['staff_id'];
+$result2 = mysqli_query($con, "SELECT * FROM student_table  WHERE `staff_id`= '$staffid' ");
 ?>
   <div class="main">
     <div class="mainContent clearfix">

@@ -6,9 +6,8 @@ include '../includes/db.inc.php';
 //Update Information
 if(isset($_POST['btn-update'])){
  $name = $_POST['name'];
-
- 
- $update = "UPDATE student_table SET `staff_id` = '$name' WHERE `std_id`='".$_GET['edit2_id']."'";
+ $status="active";
+ $update = "UPDATE student_table SET `staff_id` = '$name',`status` = '$status' WHERE `std_id`='".$_GET['edit2_id']."'";
  $up = mysqli_query($con, $update);
 
  header("location: advisors.php#dashboard");
@@ -22,6 +21,7 @@ if(isset($_POST['btn-update'])){
 <form method="post">
 <h1>Asign Advisor to Student</h1>
 <label>staff ID: </label><input type="text" name="name" placeholder="ID" ><br/><br/>
+
 <button type="submit" name="btn-update" id="btn-update" onClick="update()"><strong>Update</strong></button>
 <a href="advisors.php#dashboard"><button type="button" value="button">Cancel</button></a>
 </form>

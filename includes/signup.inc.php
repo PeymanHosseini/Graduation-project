@@ -14,6 +14,7 @@ if(isset($_POST["signup"]))
     $pwd = mysqli_real_escape_string($con, $_POST['password']);
     $course =$_POST['coursecode'];
     $level= 'student';
+    $status= 'inactive';
 
     // Error handeling
      // empty field
@@ -60,7 +61,7 @@ if(isset($_POST["signup"]))
             // insert data to data base  
             //hashing the pass
             $hashedpass = password_hash($pwd,PASSWORD_DEFAULT);
-            $sql = "INSERT INTO `student_table`(`std_email`,`password`, `std_name`, `std_fname`, `std_tell`, `std_course`,`level`) VALUES ('$email','$hashedpass','$name','$fname','$tell','$course','$level')";
+            $sql = "INSERT INTO `student_table`(`std_email`,`password`, `std_name`, `std_fname`, `std_tell`, `std_course`,`level`,`status`) VALUES ('$email','$hashedpass','$name','$fname','$tell','$course','$level','$status')";
             mysqli_query($con,$sql);
             echo ("<script LANGUAGE='JavaScript'>
             window.location.href='../LOGIN.php';

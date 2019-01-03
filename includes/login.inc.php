@@ -50,32 +50,40 @@ if(isset($_POST["submit"]))
                                 exit();
                             } 
                             else
-                            { // sepration between courses
-                                if($row1['std_course']== '403'){
-                                    
-                                    $_SESSION['email']=$row1['std_email'];
-                                    $_SESSION['level'] = $row1['level'];
-                                    $_SESSION['course'] = $row1['std_course'];
-                                    $_SESSION['name'] = $row1['std_name'];
-                                    $_SESSION['id'] = $row1['std_id'];
-                                    echo ("<script LANGUAGE='JavaScript'>
-                                    window.location.href='../student403.php#dashboard';
-                                    window.alert('You logged in successfully as a student');
-                                    </script>");
-                                }
-                                else {
-                                    
-                                
-                                $_SESSION['email']=$row1['std_email'];
-                                $_SESSION['level'] = $row1['level'];
-                                $_SESSION['course'] = $row1['std_course'];
-                                $_SESSION['name'] = $row1['std_name'];
-                                $_SESSION['id'] = $row1['std_id'];
-                                echo ("<script LANGUAGE='JavaScript'>
-                                window.location.href='../student.php#dashboard';
-                                window.alert('You logged in successfully as a student');
+                            { 
+                                if($row1['status'] == 'active'){
+                                     // sepration between courses
+                                        if($row1['std_course']== '403'){
+                                            
+                                            $_SESSION['email']=$row1['std_email'];
+                                            $_SESSION['level'] = $row1['level'];
+                                            $_SESSION['course'] = $row1['std_course'];
+                                            $_SESSION['name'] = $row1['std_name'];
+                                            $_SESSION['id'] = $row1['std_id'];
+                                            echo ("<script LANGUAGE='JavaScript'>
+                                            window.location.href='../student403.php#dashboard';
+                                            window.alert('You logged in successfully as a student');
+                                            </script>");
+                                        }
+                                        else {
+                                            
+                                        
+                                        $_SESSION['email']=$row1['std_email'];
+                                        $_SESSION['level'] = $row1['level'];
+                                        $_SESSION['course'] = $row1['std_course'];
+                                        $_SESSION['name'] = $row1['std_name'];
+                                        $_SESSION['id'] = $row1['std_id'];
+                                        echo ("<script LANGUAGE='JavaScript'>
+                                        window.location.href='../student.php#dashboard';
+                                        window.alert('You logged in successfully as a student');
+                                        </script>");
+                                                }  }
+                                        else{
+                                            echo ("<script LANGUAGE='JavaScript'>
+                                window.location.href='../LOGIN.php';
+                                window.alert('your account has not been activated yet');
                                 </script>");
-                                        }                    
+                                        }                  
                             }
                         }
                         else
@@ -106,6 +114,7 @@ if(isset($_POST["submit"]))
             {// advisor login
                 $_SESSION['email']=$row1['staff_email'];
                 $_SESSION['level'] = $row1['level'];
+                $_SESSION['staff_id'] = $row1['staff_id'];
                 echo ("<script LANGUAGE='JavaScript'>
                     window.location.href='../advisor.php';
                     window.alert('You logged in successfully as a advisor');
