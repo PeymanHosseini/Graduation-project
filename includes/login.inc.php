@@ -57,6 +57,7 @@ if(isset($_POST["submit"]))
                                     $_SESSION['level'] = $row1['level'];
                                     $_SESSION['course'] = $row1['std_course'];
                                     $_SESSION['name'] = $row1['std_name'];
+                                    $_SESSION['id'] = $row1['std_id'];
                                     echo ("<script LANGUAGE='JavaScript'>
                                     window.location.href='../student403.php#dashboard';
                                     window.alert('You logged in successfully as a student');
@@ -69,6 +70,7 @@ if(isset($_POST["submit"]))
                                 $_SESSION['level'] = $row1['level'];
                                 $_SESSION['course'] = $row1['std_course'];
                                 $_SESSION['name'] = $row1['std_name'];
+                                $_SESSION['id'] = $row1['std_id'];
                                 echo ("<script LANGUAGE='JavaScript'>
                                 window.location.href='../student.php#dashboard';
                                 window.alert('You logged in successfully as a student');

@@ -12,12 +12,16 @@ if($pdate=strtotime($_POST['date'])) {
   // Get image name
   $uploadedfile = $_FILES['file']['name'];
    // Get student id
-   $student_id = mysqli_real_escape_string($con, $_POST['stdNumber']);
+   $student_id = $_SESSION['id'];
   // Get text
   $file_text = mysqli_real_escape_string($con, $_POST['file_text']);
     // image file directory
   	$target = "uploadedFile/".basename($uploadedfile);
   $sql = "INSERT INTO uploaded_file (`std_email`, `std_id`, `files`, `date`, `text`) VALUES ('$user_id', '$student_id', '$uploadedfile', '$date', '$file_text')";
+  echo ("<script LANGUAGE='JavaScript'>
+ window.location.href='upload.php#dashboard';
+ window.alert('your file is uploaded to the data base ');
+ </script>");
   // execute query
   mysqli_query($con, $sql);
   if (move_uploaded_file($_FILES['file']['tmp_name'], $target)) {
@@ -36,8 +40,6 @@ if($pdate=strtotime($_POST['date'])) {
         <h1 class="header"><span class=""></span></h1>
          <div class="quick-press">
            <form action="" method="post" enctype="multipart/form-data"><br/><br/>
-           <label for="date">   Student Number:     </label>
-                 <input type="text" name="stdNumber" ><br/>
                        <label for="date">   Date:     </label>
                       <input type="date"  name="date" id="date"/>
                       <br/><br/>
