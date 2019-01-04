@@ -3,7 +3,7 @@ include 'header.advisor.php';
 include '../includes/db.inc.php';
 
 $result2 = mysqli_query($con, "SELECT * FROM student_table  WHERE `staff_id`= '2' ");
-$result3 = mysqli_query($con, "SELECT * FROM attendance");
+$result3 = mysqli_query($con, "SELECT `std_id`, SUM(`status` = 'p') AS presentCount, COUNT(*) AS totalCount, (SUM(`Status` = 'present') * 100) / COUNT(*) AS percent FROM attendance WHERE std_id = 38");
 ?>
   <div class="main">
     <div class="mainContent clearfix">
@@ -40,11 +40,11 @@ $result3 = mysqli_query($con, "SELECT * FROM attendance");
            
    <table border = '1' style='width:100%'  >
    <tr>
-   <th>     ID    </th>
-   <th >   student Id   </th>
-   <th >   course  </th>
-   <th >   date  </th>
-   <th >  Attendance </th>
+   <th>     student Id    </th>
+   <th>     present Count    </th>
+   <th >   totalLecture   </th>
+   <th >   percent  </th>
+
   
    
    </tr>
@@ -52,14 +52,11 @@ $result3 = mysqli_query($con, "SELECT * FROM attendance");
    while ($row3 = mysqli_fetch_array($result3))
    {?>
    <tr>
-    <td> <?php echo $row3['id'] ;?>    </td>
-    <td align="center"> <?php echo $row3['std_id'] ;?>  </td>
-    <td align="center"> <?php echo $row3['course_id'];  ?>      </td>
-    <td align="center"> <?php echo $row3['date'];  ?>      </td>
-    <td align="center"> <?php echo $row3['status'];  ?>      </td>
-    
-
-    <?php
+   <td align="center"> <?php echo $row3['std_id'] ;?>  </td>
+    <td align="center"> <?php echo $row3['presentCount'] ;?>  </td>
+    <td align="center"> <?php echo $row3['totalCount'];  ?>      </td>
+    <td align="center"> <?php echo $row3['percent'];  ?>      </td>
+       <?php
    }
    ?></table>
     
