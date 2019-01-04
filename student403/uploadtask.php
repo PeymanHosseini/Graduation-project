@@ -23,7 +23,8 @@ echo '<tr>';
 echo '<td>' . $row['ann_id'] . '</td>';
 echo '<td>' . $row["ann_text"] . '</td>';
 echo '<td>' . $row["date"] . '</td>';
-echo '<td align='center' > <a  href='attendance.php?edit2_id= $row2['std_id'];  alt='edit'  >Attendance</a>     </td>';
+// i have to fix problems for this line
+echo '<td align='center' > <a  href='attendance.php?edit2_id= .$row2['std_id'];  alt='edit'  >Attendance</a>     </td>';
 echo '</tr>';
 }
 echo '</table>';

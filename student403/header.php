@@ -36,6 +36,7 @@ if($_SESSION['level']!="student" || $_SESSION['course'] != 403){
         <li><a href="../student403.php#dashboard"> Home </a></li>
         <li><a href="upload.php#dashboard">Upload Weekly Task</a></li>
         <li><a href="announce.php#dashboard"> Announcement</a></li>
+        <li><a href="uploadtask.php#dashboard"> Upload Task</a></li>
         <li><a href="../logout.php"> Logout</a></li>
      </ul>
   </div>
